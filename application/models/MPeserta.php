@@ -7,7 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			return $this->db->query($sql, array($nama));
 		}
 
-		public function absensi($id) {
-			
+		public function absensi($id, $jumlah_hadir) {
+			$this->db->query("UPDATE peserta set jumlah_hadir = $jumlah_hadir where id = $id");
+			$this->db->query("INSERT into kehadiran(id_peserta, waktu) values($id,now())");
 		}
 	}

@@ -80,9 +80,16 @@ class Peserta extends Admin_Controller {
         if ($key->jumlah_undangan == $key->jumlah_hadir) {
             $hadir = true;
         } else {
-            $this->MPeserta->absensi($key->id);
+            $this->MPeserta->absensi($key->id, $key->jumlah_hadir + 1 );
+            $hadir = false;
             break;
         }
+    }
+
+    if ($hadir) {
+        // peserta sudah hadir , keluar page gagal
+    } else {
+        // sukses absen
     }
   }
 
