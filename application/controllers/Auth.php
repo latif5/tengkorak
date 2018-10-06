@@ -25,27 +25,25 @@ class Auth extends CI_Controller {
     $this->load->view('auth');
   }
 
+   public function absensi() {
+    $nama = $this->input->post('nama');
+    $data = $this->MAuth->getPesertaByNama($nama);
+    $hadir = false;
+    foreach ($data->result() as $key) {
+        if ($key->jumlah_undangan == $key->jumlah_hadir) {
+            $hadir = true;
+        } else {
+            $this->MPeserta->absensi($key->id, $key->jumlah_hadir + 1 );
+            $hadir = false;
+            break;
+        }
+    }
 
-  function get_data_name(){
-
-  }
-
-  public function createCaptcha(){
-    $options = array(
-      'img_path' => './capimg/',
-      'img_url' => base_url('capimg'),
-      'img_width' => '180',
-      'img_height' => '40',
-      'font_path'     => './system/fonts/texb.ttf',
-      'font_size'     => 25,
-      'word_length'   => 4,
-      'expiration' => 7200
-    );
-
-    $cap = create_captcha($options);
-    $this->session->set_userdata('keycode',md5($cap['word']));
-    $this->session->set_userdata('captcha',$cap['image']);
-    return $cap['image'];
+    if ($hadir) {
+        // peserta sudah hadir , keluar page gagal
+    } else {
+        // sukses absen
+    }
   }
 
   public function successLogin($id,$nama_lengkap,$nama_user,$password,$email){
