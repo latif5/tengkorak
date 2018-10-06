@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOKIA</title>
+    <title>Tengkorak</title>
   <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/dist/img/favicon/icon.png');?>"/>
     <link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
@@ -13,35 +13,20 @@
   <link href="<?php echo base_url('assets/dist/css/slide_show/jquery.bxslider.css');?>" rel="stylesheet">
 </head>
 
-<body class="gray-bg" style="background:#124191 !important;">
+<body class="gray-bg" style="background-image: url(<?=base_url()?>assets/dist/img/img.jpeg);">
 
     <div class="loginColumns animated fadeInDown" style=";">
         <div class="row">
-      <div style="background:#124191 !important; color:#ffffff !important; border:1px solid #00000; display:table;padding:20px;">
+      <div style="background:hsl(345, 100, 0) !important;  border:1px; display:table; padding:20px;">
+       
         <div class="col-md-6">
-          <div style="max-width: 100%; margin-top:10%;">
-            <ul class="bxslider">
-              <li><img src="<?=base_url()?>assets/dist/css/slide_show/imgs/image1.jpg"></li>
-                <li><img src="<?=base_url()?>assets/dist/css/slide_show/imgs/image2.jpg"></li>
-              <li><img src="<?=base_url()?>assets/dist/css/slide_show/imgs/image3.jpg"></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="ibox-content" style="border:none !important;background:#124191 !important; color:#ffffff !important;padding:0px !important;">
-            <center><img src="<?=base_url()?>assets/dist/img/nokia_logo_white.png" width="250px" height="100px" style="margin-top: -20px !important; margin-bottom: -10px !important;"></center>
+          <div class="ibox-content" style="background-color: background:hsl(345, 100, 0); border:none !important; !important; padding:0px !important;">
+            
             <form class="m-t" role="form" method="post" action="<?=base_url();?>Auth/login">
               <div class="form-group">
-                <input type="text" id="nama_user" name="nama_user" style="color:black !important;" class="form-control" placeholder="Username" required="" autofocus="" value="<?php echo $this->session->userdata('nama_userTemp'); ?>">
+                <input type="text" id="nama_user" name="nama_user" style="background-color: hsl(345, 100, 0) !important;" class="form-control" placeholder="Barcode" required="" autofocus="" value="">
               </div>
-              <div class="form-group">
-                <input type="password" id="password" name="password" style="color:black !important;" class="form-control" placeholder="Password" required="" value="<?php echo $this->session->userdata('passwordTemp'); ?>">
-              </div>
-              <p style="margin-top: -1.5%;"><?php echo $captcha; ?><a href="<?=base_url();?>Auth/reCaptcha" style="color:white; margin-left: 10px;"> <i class="fa fa-refresh" aria-hidden="true"></i> Refresh captcha</a></p>
-              <div class="form-group">
-                <input type="text" id="captcha" name="captcha" style="color:black !important;" class="form-control" placeholder="Input captcha code. 4 characters" required="" value="<?php echo $this->session->userdata('captchaTemp'); ?>">
-              </div>
-              <button type="submit" class="btn btn-primary" id="submit">Login</button>
+              <button type="submit" class="btn btn-warning" id="submit">Check</button>
             </form>
               
           </div>
@@ -95,7 +80,7 @@
             <h4>
               <b>
                 We texted a code to:<br>
-                <p id="sendMail"><?php echo $this->session->userdata('emailTemp'); ?></p>
+                <p id="sendMail"></p>
               </b>
             </h4><br>
             <h4>
@@ -104,7 +89,7 @@
               </b>
             </h4>
             <form action="<?=base_url();?>Auth/checkCode" method="POST">
-              <input type="hidden" name="id" value="<?php echo $this->session->userdata("idTemp");?>">
+              <input type="hidden" name="id" value="">
               <input type="text" id="kode_verifikasi" name="kode_verifikasi" style="color:black !important;" class="form-control" placeholder="Input captcha code. 4 characters" required maxlength="4">
             </div>
             <div class="modal-footer">

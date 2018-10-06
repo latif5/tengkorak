@@ -650,9 +650,9 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   color: #fff;
 }
 .btn-primary {
-  background-color: #003399;
+  background-color: hsl(345, 100, 0);
   border-color: #adadad;
-  color: #FFFFFF;
+  color: hsl(345, 100, 0);
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -665,7 +665,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 .btn-primary.active:focus {
   background-color: #0546C8;
   border-color: #c4c4c4;
-  color: #FFFFFF;
+  color: hsl(345, 100, 0);
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -3868,7 +3868,7 @@ code {
   min-height: 48px;
 }
 .ibox-content {
-  background-color: #ffffff;
+  background-color: background:hsl(345, 100, 0);
   color: inherit;
   padding: 10px 10px 10px 10px;
   border-color: #ffffff;
