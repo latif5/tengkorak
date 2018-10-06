@@ -27,7 +27,7 @@ class Auth extends CI_Controller {
 
    public function absensi() {
     $nama = $this->input->post('nama');
-    $data = $this->MAuth->getPesertaByNama($nama);
+    $data = $this->MAuth->getPersertaByNama($nama);
     $hadir = false;
     foreach ($data->result() as $key) {
         if ($key->jumlah_undangan == $key->jumlah_hadir) {

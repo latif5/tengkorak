@@ -25,7 +25,7 @@ date_default_timezone_set('Asia/Jakarta');
 |
 */
 
-$config['base_url'] = 'http://localhost/tengkorak/';
+$config['base_url'] = 'http://localhost/app/tengkorak/';
 /*
 |--------------------------------------------------------------------------
 | Index File

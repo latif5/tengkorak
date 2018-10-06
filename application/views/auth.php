@@ -53,19 +53,18 @@
 
 
     <!-- Mainly scripts -->
-    <script src="<?php echo base_url('assets/plugins/jQuery/jquery-2.2.3.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/dist/js/jquery.bxslider.js'); ?>"></script>
-
+<script src="<?php echo base_url('assets/plugins/jQuery/jquery-2.2.3.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/dist/js/jquery.bxslider.js'); ?>"></script>
 
 <script type="text/javascript">
   $(document).ready(function() { 
-    var form = $('#Check_barcode').val();
-    $('#nama').change(function() { 
+    var form = $('#nama').val();
+    $('#nama').change(function(){
       $.ajax({ 
-        url: '<?php echo base_url("Auth/get_data_name"); ?>',
+        url: '<?php echo base_url("Auth/absensi"); ?>',
         type: 'post',
-        data: form.serialize(),
+        data: {nama:form},
         dataType: 'json',
         success: function(data)
         {
@@ -73,8 +72,8 @@
           // setTimeout(function(){$("#notif_save").hide();}, 2000);
         }
       });
-   }); 
-});
+    }); 
+  });
 
 </script>
 </html>
