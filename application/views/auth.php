@@ -61,7 +61,7 @@
 <script type="text/javascript">
   $(document).ready(function() { 
     var form = $('#Check_barcode').val();
-    $('#Check_barcode').submit(function() { 
+    $('#nama').change(function() { 
       $.ajax({ 
         url: '<?php echo base_url("Auth/get_data_name"); ?>',
         type: 'post',

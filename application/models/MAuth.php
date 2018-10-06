@@ -3,6 +3,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	class MAuth extends CI_Model {
 
+
+		public function absensi($id, $jumlah_hadir) {
+			$this->db->query("UPDATE peserta set jumlah_hadir = $jumlah_hadir where id = $id");
+			$this->db->query("INSERT into kehadiran(id_peserta, waktu) values($id,now())");
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
 		public function cekData($username,$password){
 			$sql = "SELECT * FROM user WHERE nama_user = ? and password = ?";
 			return $this->db->query($sql, array($username,md5($password)));
