@@ -8,20 +8,21 @@ class Auth extends CI_Controller {
   function dateSerialToDateTime($date) {
       return ((($date > 25568) ? $date : 25569) * 86400) - ((70 * 365 + 19) * 86400);
   }
-  public function index($nama_user = null) {
+  public function index() {
     /*$date = $this->dateSerialToDateTime(43046);
     echo $date."<br>";
     echo date('Y', $date)."-".date('m', $date)."-".date('d', $date);*/
-    if($this->session->userdata('captcha') == ""){
-      $data['captcha'] = $this->createCaptcha();
-    }else{
-      $data['captcha'] = $this->session->userdata('captcha');
-    }
+
+    // if($this->session->userdata('captcha') == ""){
+    //   $data['captcha'] = $this->createCaptcha();
+    // }else{
+    //   $data['captcha'] = $this->session->userdata('captcha');
+    // }
     
-    if($nama_user!=null){
-      $data['nama_user'] = $nama_user;
-    }
-    $this->load->view('auth',$data);
+    // if($nama_user!=null){
+    //   $data['nama_user'] = $nama_user;
+    // }
+    $this->load->view('auth');
   }
 
   public function createCaptcha(){
