@@ -52,7 +52,7 @@ h5 {
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus {
-  background-color: #134292;
+  background-color: hsl(345, 100, 0);
   color: white;
 }
 .nav .open > a,
@@ -115,7 +115,7 @@ h5 {
 .dropdown-menu > .active > a:hover {
   color: #fff;
   text-decoration: none;
-  background-color: #134292;
+  background-color: hsl(345, 100, 0);
   outline: 0;
 }
 .dropdown-menu > li > a.font-bold {
@@ -170,14 +170,14 @@ h5 {
 }
 .nav-header {
   padding: 6px 17px 3px 30px;
-  background-color: #134292;
+  background-color: hsl(345, 100, 0);
   /*background-image: url("patterns/header-profile.png");*/
 }
 .pace-done .nav-header {
   transition: all 0.4s;
 }
 .nav > li.active {
-  border-left: 4px solid #134292;
+  border-left: 4px solid hsl(345, 100, 0);
   background: #dedede ;
 }
 .nav.nav-second-level > li.active {
@@ -330,7 +330,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 }
 .navbar-fixed-top,
 .navbar-static-top {
-  background: #134292;
+  background: hsl(345, 100, 0);
 }
 .fixed-nav #wrapper {
   margin-top: 0;
@@ -411,7 +411,7 @@ body.canvas-menu .logo-element {
 }
 body.mini-navbar .nav-header {
   padding: 0;
-  background-color: #134292;
+  background-color: hsl(345, 100, 0);
 }
 body.canvas-menu .nav-header {
   padding: 33px 25px;
@@ -3417,7 +3417,7 @@ body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #2f4050;
   font-size: 11px;
-  color: #134292;
+  color: hsl(345, 100, 0);
   overflow-x: hidden;
 }
 html,
@@ -8495,4 +8495,16 @@ div.panel {
     padding: 0 18px;
     background-color: white;
     display: none;
+}
+
+
+.ibox-content {
+    position: relative;
+    left: 400px;
+    top: 700px;
+    
+}
+
+body{
+  color: hsl(345, 100, 0);
 }
