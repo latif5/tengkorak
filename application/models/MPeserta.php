@@ -11,4 +11,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->db->query("UPDATE peserta set jumlah_hadir = $jumlah_hadir where id = $id");
 			$this->db->query("INSERT into kehadiran(id_peserta, waktu) values($id,now())");
 		}
+
+		public function add($data) {
+			$this->db->insert('peserta', $data);
+		}
 	}

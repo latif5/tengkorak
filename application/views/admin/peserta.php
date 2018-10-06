@@ -28,66 +28,46 @@
           </tr>
           </thead>
         </table>
+
+        <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#addPeserta">Tambah</button>
       </div>
     </div>
 
   </section>
 
   <!--Import New-->
-  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addMenuTambahan" id="import">
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addMenuTambahan" id="addPeserta">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Import new data</h4>
+            <h4 class="modal-title">Tambah Peeserta</h4>
         </div>
         <div class="modal-body">
-        <form action="<?=base_url()?>Sorpor/import" method="POST" enctype="multipart/form-data">
+        <form action="<?=base_url()?>Peserta/add" method="POST" enctype="multipart/form-data">
           <div class='form-group'>
-            <label >Method</label>
+            <label >Nama</label>
             <p>
-              <select class="form-control input-sm" name="method" required>
-                <option value="">- Choose method -</option>
-                <option value="New data">New data</option>
-                <option value="Update data">Update data</option>
-              </select>
+              <input class="form-control input-sm" type="text" name="nama" placeholder="Nama">
             </p>
           </div>
           <div class='form-group'>
-            <label >UL Type</label>
+            <label >Deskripsi</label>
             <p>
-              <select class="form-control input-sm" name="uptype" required>
-                <option value="">- Choose -</option>
-                <option value="POR">POR</option>
-                <option value="COR">COR</option>
-                <option value="SOR">SOR</option>
-              </select>
+              <input class="form-control input-sm" type="text" name="deskripsi" placeholder="Deskripsi">
             </p>
           </div>
           <div class='form-group'>
-            <label >POR Type</label>
+            <label >Jumlah Undangan</label>
             <p>
-              <select class="form-control input-sm" name="portype" required>
-                <option value="">- Choose -</option>
-                <option value="SO and SPO">SO and SPO</option>
-                <option value="SO Only">SO Only</option>
-                <option value="SPO Only">SPO Only</option>
-              </select>
+              <input class="form-control input-sm" type="number" name="jumalah_undangan" placeholder="Jumlah Undangan">
             </p>
           </div>
-          <div class='form-group'>
-            <label >File excel</label>
-            <p>
-              <input type="file" class="form-control input-sm" name="userfile" accept=".xlsx, .xls, .csv" required placeholder="Remarks">
-            </p>
-          </div>
-          <a href="<?=base_url();?>assets/dist/templateImport/TemplateImportSorporNew.xlsx">Download template import new</a><br>
-          <a href="<?=base_url();?>assets/dist/templateImport/TemplateImportSorporUpdate.xlsx">Download template import Update</a>
         </div>
         <div class="modal-footer">
           <button class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-success btn-sm">Import</button>
+          <button type="submit" class="btn btn-success btn-sm">Tambah</button>
         </div>
         </form>
       </div>
