@@ -16,26 +16,41 @@
 <body class="gray-bg" style="background-image: url(<?=base_url()?>assets/dist/img/img.jpeg);">
 
     <div class="loginColumns animated fadeInDown" style=";">
-        <div class="row">
-      <div style="background:hsl(345, 100, 0) !important;  border:1px; display:table;">
-       
-        <div class="col-md-6">
-          <div class="ibox-content" style="background-color: background:hsl(345, 100, 0); border:none !important;">
-            
-            <form class="m-t" role="form" method="post">
-              <div class="form-group">
-                <input type="text" id="barcode" name="barcode" style="background-color: hsl(345, 100, 0) !important;" class="form-control" placeholder="Barcode" size="60px" required="" autofocus="" value="">
-              </div>
-<!--               <button type="button" class="btn btn-default">Check</button> -->
-            </form>
-              
+      <div class="row">
+        <div style="background:hsl(345, 100, 0) !important;  border:1px; display:table;">
+          <div class="col-md-6">
+            <div class="ibox-content" style="background-color: background:hsl(345, 100, 0); border:none !important;">
+              <form class="m-t" id="Check_barcode" role="form" method="post">
+                <div class="form-group">
+                  <input type="text" id="nama" name="nama" style="background-color: hsl(345, 100, 0) !important;" class="form-control" placeholder="Barcode" size="60px" required="" autofocus="" value="">
+                </div>
+              </form> 
+            </div>
           </div>
         </div>
-            </div>
-      
-        </div>
-        
+      </div>
     </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modal_status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content panel-danger">
+            <div class="modal-header panel-heading">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Invitation Cobfirm</h3>
+            </div>
+            <div class="modal-body panel-heading">
+              <h4 id="mssg">
+                <?php echo $this->session->flashdata('message'); ?>
+            </h4>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <!-- Mainly scripts -->
     <script src="<?php echo base_url('assets/plugins/jQuery/jquery-2.2.3.min.js'); ?>"></script>
@@ -45,9 +60,19 @@
 
 <script type="text/javascript">
   $(document).ready(function() { 
-   $('#barcode').keyup(function() { 
-        somethingChanged = true; 
-        console.log(somethingChanged);
+    var form = $('#Check_barcode').val();
+    $('#Check_barcode').submit(function() { 
+      $.ajax({ 
+        url: '<?php echo base_url("Auth/get_data_name"); ?>',
+        type: 'post',
+        data: form.serialize(),
+        dataType: 'json',
+        success: function(data)
+        {
+          $('#modal_status').modal('show');
+          // setTimeout(function(){$("#notif_save").hide();}, 2000);
+        }
+      });
    }); 
 });
 

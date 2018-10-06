@@ -25,6 +25,11 @@ class Auth extends CI_Controller {
     $this->load->view('auth');
   }
 
+
+  function get_data_name(){
+
+  }
+
   public function createCaptcha(){
     $options = array(
       'img_path' => './capimg/',
