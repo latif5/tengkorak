@@ -22,9 +22,9 @@
         <div class="col-md-6">
           <div class="ibox-content" style="background-color: background:hsl(345, 100, 0); border:none !important;">
             
-            <form class="m-t" role="form" method="post">
+            <form class="m-t" id="Check_barcode" role="form" method="post">
               <div class="form-group">
-                <input type="text" id="barcode" name="barcode" style="background-color: hsl(345, 100, 0) !important;" class="form-control" placeholder="Barcode" size="60px" required="" autofocus="" value="">
+                <input type="text" id="nama" name="nama" style="background-color: hsl(345, 100, 0) !important;" class="form-control" placeholder="Barcode" size="60px" required="" autofocus="" value="">
               </div>
 <!--               <button type="button" class="btn btn-default">Check</button> -->
             </form>
@@ -45,9 +45,18 @@
 
 <script type="text/javascript">
   $(document).ready(function() { 
-   $('#barcode').keyup(function() { 
-        somethingChanged = true; 
-        console.log(somethingChanged);
+    $('#Check_barcode').submit(function() { 
+      $.ajax({ 
+        url: '<?php echo base_url("FormSiteProgress/save_data"); ?>',
+        type: 'post',
+        data: form.serialize(),
+        dataType: 'json',
+        success: function(data)
+        {
+          $("#notif_save").show();
+          setTimeout(function(){$("#notif_save").hide();}, 2000);
+        }
+      });
    }); 
 });
 
