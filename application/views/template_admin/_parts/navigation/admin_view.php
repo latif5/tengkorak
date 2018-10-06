@@ -20,29 +20,6 @@
           <li >
               <a href="<?=base_url()?>Auth/logout"><span class="hidden-xs"><?php echo $this->session->userdata("nama_lengkap"); ?></span><i style="margin-left: 40px;" class="fa fa-sign-out"></i> Logout</a>
           </li>
-          <?php if($this->session->userdata('nama_group') == "Admin"){ ?>
-          <li class="dropdown user user-menu">
-            <?php if($this->session->userdata('maintenance')){ ?>
-            <a href="<?=base_url();?>Auth/setMaintenance/0"><button class="btn btn-success btn-xs" style="margin-top: -5px;">On</button></a>
-            <?php }else{ ?>
-            <a href="<?=base_url();?>Auth/setMaintenance/1"><button class="btn btn-danger btn-xs" style="margin-top: -5px;">Off</button></a>
-            <?php } ?>
-            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Maintenance</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="user-header" style=" height: 50px;">
-                <p style="margin-top: 0px;">
-                  <?php if($this->session->userdata('maintenance')){ ?>
-                  <a href="<?=base_url();?>Auth/setMaintenance/0"><button class="btn btn-success btn-xs">On</button></a>
-                  <?php }else{ ?>
-                  <a href="<?=base_url();?>Auth/setMaintenance/1"><button class="btn btn-danger btn-xs">Off</button></a>
-                  <?php } ?>
-                </p>
-              </li>
-            </ul> -->
-          </li>
-          <?php } ?>
         </ul>
       </div>
     </nav>
@@ -57,7 +34,7 @@
       <ul class="sidebar-menu" style="overflow-y: hidden;">
         <li class="<?php if($current_page == 'Peserta'){ echo 'active'; }?>">
           <a href="<?php echo base_url('Peserta');?>" >
-            <i class="fa fa-dashboard"></i> <span>Peserta</span>
+            <i class="fa fa-users"></i> <span>Peserta</span>
           </a>
         </li>
       </ul>
